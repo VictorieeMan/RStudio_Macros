@@ -3,6 +3,12 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+; For adding a code block in R markdown
 ^r::
 Send, ``````{{}r{}}`n`n`````` `n<{!}-- Code block comment: -->
+return
+
+; For variable assignment
+^<::
+Send, <-
 return
