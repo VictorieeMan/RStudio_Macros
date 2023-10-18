@@ -5,7 +5,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; For adding a code block in R markdown
 ^r::
-Send, ``````{{}r{}}`n`n`````` `n<{!}-- Code block comment: -->
+SendRaw, ``````{r}
+SendInput, {Enter}
+; SendRaw, print("Hello World")
+SendInput, {Enter}
+SendRaw, ``````
+SendInput, {Enter}
+SendRaw, <!-- Code block comment: -->
 return
 
 ; For variable assignment
